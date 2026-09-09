@@ -8,10 +8,10 @@ import { useSound } from "@/lib/useSound";
 
 const NAV_LINKS = [
   { name: "How it works", href: "#how-it-works" },
-  { name: "Studio", href: "#studio", badge: "Interactive" },
-  { name: "Sandbox", href: "#playground" },
+  { name: "Workflow Studio", href: "#studio", badge: "Live" },
   { name: "Solutions", href: "#solutions" },
-  { name: "Integrations", href: "#integrations" },
+  { name: "Industries", href: "#industries" },
+  { name: "Human Control", href: "#human-control" },
   { name: "ROI Engine", href: "#roi-calculator" },
   { name: "Contact", href: "#contact" },
 ];

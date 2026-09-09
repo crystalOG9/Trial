@@ -58,24 +58,24 @@ export function Hero() {
               </Link>
             </div>
 
-            {/* Live Interactive Telemetry Micro-Pills */}
+            {/* Core Architectural Pillars */}
             <div className="grid grid-cols-3 gap-3 pt-6 border-t border-white/10 max-w-lg">
               <div className="flex flex-col">
-                <span className="text-xl md:text-2xl font-bold font-mono text-white">99.4%</span>
-                <span className="text-[11px] text-muted-foreground leading-tight">Extraction precision</span>
+                <span className="text-sm md:text-base font-semibold text-white">Deterministic</span>
+                <span className="text-[11px] text-muted-foreground leading-tight">Schema-enforced rules</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-xl md:text-2xl font-bold font-mono text-emerald-400">100%</span>
-                <span className="text-[11px] text-muted-foreground leading-tight">Human oversight gate</span>
+                <span className="text-sm md:text-base font-semibold text-emerald-400">HITL Oversight</span>
+                <span className="text-[11px] text-muted-foreground leading-tight">Human approval gates</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-xl md:text-2xl font-bold font-mono text-brand-300">2-3 wks</span>
-                <span className="text-[11px] text-muted-foreground leading-tight">Production deploy</span>
+                <span className="text-sm md:text-base font-semibold text-brand-300">Non-Invasive</span>
+                <span className="text-[11px] text-muted-foreground leading-tight">Zero tool replacement</span>
               </div>
             </div>
 
             <p className="mt-8 text-xs tracking-[0.2em] text-white/40 uppercase font-mono">
-              Zero software replacement &middot; Connects into your existing stack
+              Designed around how your team already operates
             </p>
           </motion.div>
         </div>

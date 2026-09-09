@@ -64,7 +64,7 @@ const INITIAL_CASES: HitlCase[] = [
     riskLevel: "low",
     confidenceScore: 0.89,
     inquirySnippet: "Rail freight interchange shutdown due to snowstorm. Priority client shipment needs emergency team-driver truck.",
-    retrievedContext: "Client Tier: PLATINUM ENTERPRISE. Service Level Agreement guarantees 99.8% on-time delivery.",
+    retrievedContext: "Client Tier: PLATINUM ENTERPRISE. Contractual SLA guarantees priority expedited dispatch.",
     proposedAction: "Authorize $450 freight expedite surcharge to guarantee delivery by 09:00 AM tomorrow.",
     systemCall: "PUT /tms/shipments/SH-992 { mode: 'EXPEDITED_GROUND', surchargeAuthorized: 450 }",
     status: "pending"
@@ -206,7 +206,7 @@ export function HitlCommandCenter() {
                   </h4>
 
                   <div className="flex items-center justify-between text-[11px] text-muted-foreground mt-2 pt-2 border-t border-white/5">
-                    <span>Conf: {(item.confidenceScore * 100).toFixed(0)}%</span>
+                    <span>{item.riskLevel === "critical" ? "Strict Review" : item.riskLevel === "medium" ? "Policy Exception" : "Routine Verification"}</span>
                     <span
                       className={cn(
                         "font-mono capitalize font-medium",
@@ -222,22 +222,6 @@ export function HitlCommandCenter() {
                   </div>
                 </div>
               ))}
-
-              {/* Live Audit Log */}
-              <div className="mt-6 pt-4 border-t border-white/10">
-                <div className="flex items-center gap-2 text-xs font-mono text-white/60 mb-2">
-                  <History className="w-3.5 h-3.5 text-brand-400" />
-                  <span>Audit Trail</span>
-                </div>
-                <div className="space-y-1.5 max-h-[140px] overflow-y-auto text-[11px] font-mono text-muted-foreground pr-1">
-                  {auditLog.map((log, idx) => (
-                    <div key={idx} className="leading-tight">
-                      <span className="text-white/30 mr-1.5">[{log.time}]</span>
-                      <span className="text-white/80">{log.msg}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
 
             {/* Right: Inspection & Decision Cockpit */}
@@ -310,13 +294,11 @@ export function HitlCommandCenter() {
 
               {/* Action Buttons */}
               <div className="mt-6 pt-5 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
-                <div className="text-xs text-muted-foreground">
-                  <span>Confidence: </span>
-                  <span className="font-mono text-white font-bold">
-                    {(currentCase.confidenceScore * 100).toFixed(0)}%
-                  </span>
-                  <span className="mx-2">·</span>
-                  <span>Requires Supervisor Auth</span>
+                <div className="text-xs text-muted-foreground flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                  <span className="text-white/80 font-medium">Deterministic Rule Check Complete</span>
+                  <span className="text-white/30">·</span>
+                  <span className="text-amber-300">Requires Supervisor Auth</span>
                 </div>
 
                 <div className="flex items-center gap-3 w-full sm:w-auto">

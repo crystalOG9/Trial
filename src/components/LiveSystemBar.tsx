@@ -24,20 +24,8 @@ export function LiveSystemBar({
   onOpenCommandPalette: () => void;
   onTriggerStudioSim?: () => void;
 }) {
-  const [tps, setTps] = useState(42.4);
   const [isMinimized, setIsMinimized] = useState(false);
   const { isMuted, toggleSound, playClick } = useSound();
-
-  // Simulated live fluctuating TPS
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTps((prev) => {
-        const delta = (Math.random() - 0.48) * 1.8;
-        return Number(Math.max(28, Math.min(64, prev + delta)).toFixed(1));
-      });
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
 
   const scrollTo = (id: string) => {
     playClick();
@@ -55,15 +43,15 @@ export function LiveSystemBar({
         transition={{ delay: 0.5, duration: 0.4 }}
         className="glass-card rounded-full border border-white/10 bg-[#040816]/90 shadow-[0_8px_32px_rgba(0,0,0,0.5)] backdrop-blur-xl px-4 py-2 flex items-center justify-between gap-3 text-xs"
       >
-        {/* Live TPS Telemetry */}
+        {/* System State */}
         <div className="flex items-center gap-2 pr-3 border-r border-white/10">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
           </span>
-          <span className="font-mono text-emerald-400 font-bold hidden sm:inline">{tps} ops/s</span>
+          <span className="font-semibold text-emerald-400 hidden sm:inline">Engine Active</span>
           <span className="text-[10px] text-muted-foreground uppercase font-mono hidden md:inline">
-            Telemetry Live
+            Deterministic
           </span>
         </div>
 
@@ -78,11 +66,11 @@ export function LiveSystemBar({
           </button>
 
           <button
-            onClick={() => scrollTo("playground")}
+            onClick={() => scrollTo("human-control")}
             className="px-2.5 py-1 rounded-full hover:bg-white/10 text-white/80 hover:text-white transition-colors flex items-center gap-1.5 font-medium text-[11px]"
           >
             <Sparkles className="w-3.5 h-3.5 text-purple-400" />
-            <span className="hidden sm:inline">AI</span> Sandbox
+            <span>Oversight Gate</span>
           </button>
 
           <button

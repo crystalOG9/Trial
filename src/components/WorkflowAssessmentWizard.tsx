@@ -296,26 +296,26 @@ export function WorkflowAssessmentWizard() {
               </button>
             </div>
 
-            {/* Generated Stats Row */}
+            {/* Generated Capabilities Row */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               <div className="p-3.5 rounded-xl bg-black/40 border border-white/5">
-                <span className="text-[11px] text-muted-foreground block">Feasibility Score</span>
-                <span className="text-2xl font-bold font-mono text-emerald-400">97.8%</span>
+                <span className="text-[11px] text-muted-foreground block">Feasibility Rating</span>
+                <span className="text-xl font-bold font-mono text-emerald-400">High / Viable</span>
               </div>
 
               <div className="p-3.5 rounded-xl bg-black/40 border border-white/5">
-                <span className="text-[11px] text-muted-foreground block">Hours Reclaimed</span>
-                <span className="text-2xl font-bold font-mono text-brand-300">~1,450 / yr</span>
+                <span className="text-[11px] text-muted-foreground block">Operational Upside</span>
+                <span className="text-xl font-bold font-mono text-brand-300">High Impact</span>
               </div>
 
               <div className="p-3.5 rounded-xl bg-black/40 border border-white/5">
-                <span className="text-[11px] text-muted-foreground block">Deploy Timeline</span>
-                <span className="text-2xl font-bold font-mono text-white">2-3 wks</span>
+                <span className="text-[11px] text-muted-foreground block">Rollout Method</span>
+                <span className="text-xl font-bold font-mono text-white">Iterative Pilot</span>
               </div>
 
               <div className="p-3.5 rounded-xl bg-black/40 border border-white/5">
                 <span className="text-[11px] text-muted-foreground block">Supervision Mode</span>
-                <span className="text-2xl font-bold font-mono text-amber-300">Hybrid HITL</span>
+                <span className="text-xl font-bold font-mono text-amber-300">Hybrid HITL</span>
               </div>
             </div>
 

@@ -91,12 +91,12 @@ export function CommandPalette({
       }
     },
     {
-      id: "playground",
-      title: "Open Live AI Intent Playground",
+      id: "solutions",
+      title: "Explore Operational Solutions",
       category: "Navigation",
       icon: Sparkles,
-      shortcut: "P",
-      action: () => scrollTo("playground")
+      shortcut: "S",
+      action: () => scrollTo("solutions")
     },
     {
       id: "roi",
@@ -108,19 +108,19 @@ export function CommandPalette({
     },
     {
       id: "hitl",
-      title: "Human-In-The-Loop Triage Console",
+      title: "Human-In-The-Loop Oversight Console",
       category: "Navigation",
       icon: ShieldCheck,
       shortcut: "H",
-      action: () => scrollTo("hitl-command")
+      action: () => scrollTo("human-control")
     },
     {
-      id: "integrations",
-      title: "Browse Integrations Ecosystem",
+      id: "industries",
+      title: "Browse Tailored Industry Workflows",
       category: "Navigation",
       icon: Layers,
       shortcut: "I",
-      action: () => scrollTo("integrations")
+      action: () => scrollTo("industries")
     },
     {
       id: "sound-toggle",

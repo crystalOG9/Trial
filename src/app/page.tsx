@@ -7,10 +7,7 @@ import { ProblemSection } from "@/components/ProblemSection";
 import { CoreMessage } from "@/components/CoreMessage";
 import { HowItWorks } from "@/components/HowItWorks";
 import { WorkflowStudio } from "@/components/WorkflowStudio";
-import { LiveIntentPlayground } from "@/components/LiveIntentPlayground";
-import { AutomationDemo } from "@/components/AutomationDemo";
 import { Solutions } from "@/components/Solutions";
-import { IntegrationsEcosystem } from "@/components/IntegrationsEcosystem";
 import { Industries } from "@/components/Industries";
 import { HumanInTheLoop } from "@/components/HumanInTheLoop";
 import { ROI } from "@/components/ROI";
@@ -34,10 +31,7 @@ export default function Home() {
         <CoreMessage />
         <HowItWorks />
         <WorkflowStudio />
-        <LiveIntentPlayground />
-        <AutomationDemo />
         <Solutions />
-        <IntegrationsEcosystem />
         <Industries />
         <HumanInTheLoop />
         <ROI />
